@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+    font-size: 62.5%; /* Equivale a 10px */
+    background-image: url('../imagenes/352993-admin.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/* Navbar section */
+.nav {
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.nav .logo {
+    float: left;
+    padding-left: 3rem;
+}
+
+.nav .main_list {
+    float: right;
+    height: 100%;
+}
+
+.nav .main_list ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav .main_list ul li {
+    padding-right: 3rem;
+}
+
+.nav .main_list ul li a {
+    text-decoration: none;
+    color: #ffffffb7;
+    font-size: 2.4rem;
+}
+
+.nav .main_list ul li a:hover {
+    color: #1f8805;
+}
+
+/* Hamburger menu for mobile */
+.navTrigger {
+    display: none;
+    cursor: pointer;
+    width: 30px;
+}
+
+.navTrigger i {
+    background-color: #000;
+    border-radius: 2px;
+    display: block;
+    width: 100%;
+    height: 4px;
+}
+
+.navTrigger i + i {
+    margin-top: 5px;
+}
+
+.navTrigger.active i:nth-child(1) {
+    animation: inT 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(3) {
+    animation: inBtm 0.8s forwards;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    .navTrigger {
+        display: block;
+    }
+    
+    .nav .logo {
+        margin-left: 10px;
+    }
+    
+    .nav .main_list {
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+    }
+    
+    .nav .main_list ul {
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        background-color: #000;
+    }
+    
+    .nav .main_list ul li {
+        text-align: right;
+        width: 100%;
+    }
+    
+    .nav .main_list ul li a {
+        text-align: center;
+        font-size: 3rem;
+        padding: 20px;
+    }
+}
+
+/* Animation */
+@keyframes inT {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@keyframes inBtm {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+/* Fixed navbar background when scrolled */
+.affix {
+    background-color: #000;
+}
+
+/* Typography for sections */
+.myH2 {
+    text-align: center;
+    font-size: 4rem;
+}
+
+.myP {
+    text-align: justify;
+    padding: 0 15%;
+    font-size: 2rem;
+}
+
+@media screen and (max-width: 700px) {
+    .myP {
+        padding: 2%;
+    }
+}
+
+/* Register form styles */
+.register-container {
+    max-width: 500px;
+    margin: 100px auto;
+    padding: 40px;
+    background-color: #ffffffb7;
+    border: 1px solid #000;
+    border-radius: 50px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.register-container h2 {
+    text-align: center;
+    color: #000;
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+
+.inputBx {
+    margin-bottom: 20px;
+}
+
+.inputBx input[type="text"],
+.inputBx input[type="email"],
+.inputBx input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1.8rem;
+}
+
+.inputBx input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #027a02;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.inputBx input[type="submit"]:hover {
+    background-color: #049410;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .register-container {
+        max-width: 90%;
+    }
+}
